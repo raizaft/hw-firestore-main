@@ -24,6 +24,15 @@ export class ManterUsuarioComponent {
     const idParaEdicao = rotaAtual.snapshot.paramMap.get('id');
     if (idParaEdicao) {
       this.modoEdicao = true;
+      this.usuarioService.buscar(idParaEdicao).subscribe({
+        next: (usuarioRetornado) => {
+          this.usuario = usuarioRetornado;
+        },
+        error: (error) => {
+          this.mensagemService.erro('Erro ao carregar usuário para edição.');
+          this.roteador.navigate(['listagem-usuarios']);
+        }
+      });
     }
   }
 

@@ -9,20 +9,22 @@ import {MaterialModule} from "../material/material.module";
 import { ListagemUsuariosTabelaComponent } from './listagem-usuarios-tabela/listagem-usuarios-tabela.component';
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {HttpClientModule} from "@angular/common/http";
+import {MatTooltip} from "@angular/material/tooltip";
 
 
 
 @NgModule({
   declarations: [ManterUsuarioComponent, ListagemUsuarioComponent, ListagemUsuariosTabelaComponent],
-  imports: [
-    CommonModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    SweetAlert2Module,
-    HttpClientModule
-  ],
+    imports: [
+        CommonModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        SweetAlert2Module,
+        HttpClientModule,
+        MatTooltip
+    ],
   exports: [ManterUsuarioComponent, ListagemUsuarioComponent]
 })
 export class UsuarioModule { }
