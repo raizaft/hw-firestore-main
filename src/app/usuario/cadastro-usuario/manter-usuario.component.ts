@@ -28,6 +28,10 @@ export class ManterUsuarioComponent {
   }
 
   inserir() {
+    if (this.usuario.idade < 18) {
+      this.mensagemService.erro('A idade deve ser maior de 18 anos.');
+      return;
+    }
     if (!this.modoEdicao) {
       try {
         this.usuarioService.inserir(this.usuario).subscribe({ next: () => {} });
